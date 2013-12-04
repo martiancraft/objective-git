@@ -392,7 +392,7 @@ int GTRemotePushTransferProgressCallback(unsigned int current, unsigned int tota
 	if (pushPayload->transferProgressBlock)
 		pushPayload->transferProgressBlock(current, total, bytes, &stop);
 
-	return (stop == YES ? 0 : 1);
+	return stop;
 }
 
 - (BOOL)pushBranches:(NSArray *)branches withCredentialProvider:(GTCredentialProvider *)credProvider error:(NSError **)error progress:(GTRemotePushTransferProgressBlock)progressBlock {
